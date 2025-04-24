@@ -16,7 +16,7 @@ app = FastAPI()
 
 load_dotenv()
 EMAIL = os.getenv("LINKEDIN_EMAIL")
-PASSWORD = os.getenv("LINKEDIN_PASSWORD")
+PASSWORD = os.getenv( )
 COOKIE_FILE = "linkedin_cookies.pkl"
 
 class PostRequest(BaseModel):
@@ -103,6 +103,10 @@ def post_on_linkedin(post_content):
 def post_to_linkedin(req: PostRequest):
     success = post_on_linkedin(req.post_content)
     return {"status": "success" if success else "failed"}
+
+@app.get("/")
+def read_root():
+    return {"message": "LinkedIn Automation API is running 🚀"}
 
 if __name__ == "__main__":
     import uvicorn

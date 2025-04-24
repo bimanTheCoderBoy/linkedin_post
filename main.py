@@ -66,7 +66,7 @@ def post_on_linkedin(post_content):
         driver.get("https://www.linkedin.com/feed/")
 
         try:
-            post_button = driver.find_element(By.XPATH, "//span[contains(@class,'artdeco-button__text')]//strong[text()='Start a post']")
+            post_button = driver.find_element(By.XPATH, "//button[//span[contains(@class,'artdeco-button__text')]//strong[text()='Start a post']]")
             post_button.click()
         except Exception as e:
             print("\u274c Failed to click 'Start a post' button:", e)

@@ -16,7 +16,7 @@ app = FastAPI()
 
 load_dotenv()
 EMAIL = os.getenv("LINKEDIN_EMAIL")
-PASSWORD = os.getenv( )
+PASSWORD = os.getenv("LINKEDIN_PASSWORD")
 COOKIE_FILE = "linkedin_cookies.pkl"
 
 class PostRequest(BaseModel):

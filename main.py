@@ -25,9 +25,11 @@ class PostRequest(BaseModel):
 def create_driver():
     chromedriver_autoinstaller.install()
     chrome_options = Options()
-    chrome_options.add_argument('--headless')
-    chrome_options.add_argument('--disable-dev-shm-usage')
-    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument("--headless")  # run without GUI
+    chrome_options.add_argument("--no-sandbox")  # required for some cloud platforms
+    chrome_options.add_argument("--disable-dev-shm-usage")  # overcome limited resource problems
+    chrome_options.add_argument("--disable-gpu")
+    chrome_options.add_argument("--window-size=1920x1080")
     return webdriver.Chrome(options=chrome_options)
 
 def login(driver):

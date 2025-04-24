@@ -4,5 +4,4 @@ services:
     env: docker
     plan: free
     dockerfilePath: ./Dockerfile
-    region: oregon
     autoDeploy: true
